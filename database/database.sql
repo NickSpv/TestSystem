@@ -21,7 +21,7 @@ CREATE TABLE solves(
 CREATE TABLE tests(
 	name TEXT PRIMARY KEY
 );
-CREATE TABLE control_examples_solves(
+CREATE TABLE control_examples_tasks(
 	id_control_examples integer NOT NULL,
 	name_tasks TEXT NOT NULL,
     FOREIGN KEY(id_control_examples) REFERENCES control_examples(id) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -39,13 +39,13 @@ CREATE TABLE tasks_tests(
     FOREIGN KEY(name_tasks) REFERENCES tasks(name) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(name_tests) REFERENCES tests(name) ON DELETE CASCADE ON UPDATE CASCADE
 );
-CREATE TABLE many_tests_has_many_users (
+CREATE TABLE tests_users (
 	name_tests TEXT NOT NULL,
 	name_users TEXT NOT NULL,
     FOREIGN KEY(name_tests) REFERENCES tests(name) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(name_users) REFERENCES users(name) ON DELETE CASCADE ON UPDATE CASCADE
 );
-CREATE TABLE many_users_has_many_Solves (
+CREATE TABLE users_solves (
 	name_users TEXT NOT NULL,
 	id_solves integer NOT NULL,
     FOREIGN KEY(name_users) REFERENCES users(name) ON DELETE CASCADE ON UPDATE CASCADE,

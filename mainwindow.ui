@@ -13,9 +13,145 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1">
+    <item>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_select">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Выбрать</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="pushButton_add">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Добавить</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuusers">
+    <property name="title">
+     <string>Таблицы</string>
+    </property>
+    <addaction name="actionusers"/>
+    <addaction name="actiontests"/>
+    <addaction name="actiontasks"/>
+    <addaction name="actionsolves"/>
+    <addaction name="actioncontrol_examples"/>
+    <addaction name="actionsolves_tasks"/>
+    <addaction name="actiontest_tasks"/>
+    <addaction name="actioncontrol_examples_tasks"/>
+    <addaction name="actiontests_users"/>
+    <addaction name="actionusers_solves"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Отчет</string>
+    </property>
+    <addaction name="action"/>
+   </widget>
+   <addaction name="menuusers"/>
+   <addaction name="menu"/>
+  </widget>
+  <action name="actionusers">
+   <property name="text">
+    <string>users</string>
+   </property>
+  </action>
+  <action name="actiontests">
+   <property name="text">
+    <string>tests</string>
+   </property>
+  </action>
+  <action name="actiontasks">
+   <property name="text">
+    <string>tasks</string>
+   </property>
+  </action>
+  <action name="actionsolves">
+   <property name="text">
+    <string>solves</string>
+   </property>
+  </action>
+  <action name="actioncontrol_examples">
+   <property name="text">
+    <string>control_examples</string>
+   </property>
+  </action>
+  <action name="actionsolves_tasks">
+   <property name="text">
+    <string>solves_tasks</string>
+   </property>
+  </action>
+  <action name="actiontest_tasks">
+   <property name="text">
+    <string>tasks_tests</string>
+   </property>
+  </action>
+  <action name="actioncontrol_examples_tasks">
+   <property name="text">
+    <string>control_examples_tasks</string>
+   </property>
+  </action>
+  <action name="actiontests_users">
+   <property name="text">
+    <string>tests_users</string>
+   </property>
+  </action>
+  <action name="actionusers_solves">
+   <property name="text">
+    <string>users_solves</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Создать</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
