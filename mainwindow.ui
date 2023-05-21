@@ -14,30 +14,27 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1">
-    <item>
-     <widget class="QTableWidget" name="tableWidget">
-      <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::DefaultContextMenu</enum>
-      </property>
-     </widget>
-    </item>
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="2,1">
     <item>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="1" column="0">
+      <item row="2" column="0">
        <widget class="QPushButton" name="pushButton_select">
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="text">
-         <string>Выбрать</string>
+         <string>Выбрать записи, содержащие...</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Создать отчет</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
        <widget class="QPushButton" name="pushButton_add">
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
@@ -47,20 +44,41 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_insert"/>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QTableView" name="tableView">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="gridStyle">
+       <enum>Qt::SolidLine</enum>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -88,14 +106,7 @@
     <addaction name="actiontests_users"/>
     <addaction name="actionusers_solves"/>
    </widget>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>Отчет</string>
-    </property>
-    <addaction name="action"/>
-   </widget>
    <addaction name="menuusers"/>
-   <addaction name="menu"/>
   </widget>
   <action name="actionusers">
    <property name="text">

@@ -1,25 +1,26 @@
 CREATE DATABASE new_database;
 CREATE TABLE users(
-	name TEXT PRIMARY KEY,
-	password TEXT NOT NULL
+    login TEXT PRIMARY KEY NOT NULL,
+    password TEXT NOT NULL,
+    name TEXT NOT NULL
 );
 CREATE TABLE control_examples(
-	id integer PRIMARY KEY,
+	id integer PRIMARY KEY NOT NULL,
 	input TEXT NOT NULL,
 	output TEXT NOT NULL
 );
 CREATE TABLE tasks(
-	name TEXT PRIMARY KEY,
+	name TEXT PRIMARY KEY NOT NULL,
 	condition TEXT NOT NULL,
 	difficulty integer NOT NULL
 );
 CREATE TABLE solves(
-	id integer PRIMARY KEY,
+	id integer PRIMARY KEY NOT NULL,
 	programm TEXT NOT NULL,
 	status TEXT NOT NULL
 );
 CREATE TABLE tests(
-	name TEXT PRIMARY KEY
+	name TEXT PRIMARY KEY NOT NULL
 );
 CREATE TABLE control_examples_tasks(
 	id_control_examples integer NOT NULL,
@@ -41,13 +42,13 @@ CREATE TABLE tasks_tests(
 );
 CREATE TABLE tests_users (
 	name_tests TEXT NOT NULL,
-	name_users TEXT NOT NULL,
+	login_users TEXT NOT NULL,
     FOREIGN KEY(name_tests) REFERENCES tests(name) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY(name_users) REFERENCES users(name) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY(login_users) REFERENCES users(login) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE users_solves (
-	name_users TEXT NOT NULL,
+	login_users TEXT NOT NULL,
 	id_solves integer NOT NULL,
-    FOREIGN KEY(name_users) REFERENCES users(name) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(login_users) REFERENCES users(login) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(id_solves) REFERENCES solves(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
